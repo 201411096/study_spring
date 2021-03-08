@@ -1,7 +1,9 @@
-/.metadata/
-*/target/
-/Servers/
-*/.project
-*/.classpath
-*/.factorypath
-*/*.class
+**/.metadata/
+**/target/
+**/Servers/
+**/.project
+**/.classpath
+**/.settings/
+**/.factorypath
+**/*.class
+**/.springBeans
