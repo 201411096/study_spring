@@ -4,15 +4,10 @@ import hello.hellospring.domain.Member;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 //import org.assertj.core.api.Assertions;
-import javax.swing.text.html.Option;
-
 import java.util.List;
-
 import static org.assertj.core.api.Assertions.*;        // static import ...
 
 public class MemoryMemberRepositoryTest {
-
-    //MemberRepository repository = new MemoryMemberRepository();
     MemoryMemberRepository repository = new MemoryMemberRepository();
 
     @AfterEach
@@ -25,22 +20,10 @@ public class MemoryMemberRepositoryTest {
     public void save(){
         Member member = new Member();
         member.setName("spring");
-
         repository.save(member);
 
         Member result = repository.findById(member.getId()).get();
-
-        // 1. 직접 확인
-        // System.out.println("result = " + (result == member));
-
-        // 2. org.junit.jupiter.api 사용
-        // Assertions.assertEquals(member, result);
-        // Assertions.assertEquals(member, null);    // error 발생
-
-        // 3. org.assertj.core.api 사용
-        // Assertions.assertThat(member).isEqualTo(result);
         assertThat(member).isEqualTo(result);
-        // assertThat(member).isEqualTo(null);
     }
     @Test
     public void findByName(){
@@ -53,7 +36,6 @@ public class MemoryMemberRepositoryTest {
         repository.save(member2);
 
         Member result = repository.findByName("spring1").get();
-        //Member result = repository.findByName("spring2").get();
         assertThat(result).isEqualTo(member1);
     }
 
@@ -70,7 +52,5 @@ public class MemoryMemberRepositoryTest {
         List<Member> result = repository.findAll();
 
         assertThat(result.size()).isEqualTo(2);
-        //assertThat(result.size()).isEqualTo(3);
     }
-
 }
