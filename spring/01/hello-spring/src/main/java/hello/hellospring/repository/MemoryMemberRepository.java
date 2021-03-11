@@ -14,7 +14,6 @@ Optional<T> 클래스는 Integer나 Double 클래스처럼 'T'타입의 객체�
 즉, 복잡한 조건문 없이도 널(null) 값으로 인해 발생하는 예외를 처리할 수 있게 됩니다.
  */
 
-@Repository
 public class MemoryMemberRepository implements MemberRepository{
 
     // 실무에서는? ConcurrentHashMap, AtomicLong을 주로 사용
