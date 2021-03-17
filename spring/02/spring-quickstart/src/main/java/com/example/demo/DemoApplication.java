@@ -22,6 +22,8 @@ import org.springframework.web.client.RestTemplate;
 public class DemoApplication {
 
 	// mvnw spring-boot:run
+	// mvnw clean package
+	// mvnw spring-boot:run -Dserver.port=9000 (doesn't work)
 
 	/*
 	Build an executable JAR
