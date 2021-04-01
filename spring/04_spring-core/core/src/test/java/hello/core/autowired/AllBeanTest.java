@@ -16,7 +16,9 @@ public class AllBeanTest {
 
     @Test
     void findAllBean(){
+        System.out.println("before applicationContext ...");
         ApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class, DiscountService.class);
+        System.out.println("after applicationContext ...");
 
         DiscountService discountService = ac.getBean(DiscountService.class);
         Member member = new Member(1L, "userA", Grade.VIP);
