@@ -13,6 +13,17 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+V1 구조
+
+FrontController
+ㄴ URL 매핑 정보에서 컨트롤러 조회 및 호출
+
+Controller
+ㄴ JSP forward
+
+ */
+
 @WebServlet(name = "frontControllerServletV1", urlPatterns = "/front-controller/v1/*")
 public class FrontControllerServletV1 extends HttpServlet {
 

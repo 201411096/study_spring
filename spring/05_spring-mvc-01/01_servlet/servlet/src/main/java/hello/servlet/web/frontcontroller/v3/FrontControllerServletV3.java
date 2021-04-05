@@ -19,6 +19,23 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+V3 구조
+
+Controller
+ㄴ 인자로 들어가는 HttpServletRequest, HttpServletResponse를 Map 객체로 대체 -> 서블릿 종속성 제거
+ㄴ ModelView를 반환
+    ㄴ render는 MyView를 그대로 사용
+
+뷰 이름 중복 제거
+ㄴ 물리적 위치를 FrontController에서 처리하여 Controller에서는 논리 이름만을 반환하도록 변경
+
+/WEB-INF/views/new-form.jsp     -> new-form
+/WEB-INF/views/save-result.jsp  -> save-result
+/WEB-INF/views/members.jsp      -> members
+
+ */
+
 @WebServlet(name = "frontControllerServletV3", urlPatterns = "/front-controller/v3/*")
 public class FrontControllerServletV3 extends HttpServlet {
 

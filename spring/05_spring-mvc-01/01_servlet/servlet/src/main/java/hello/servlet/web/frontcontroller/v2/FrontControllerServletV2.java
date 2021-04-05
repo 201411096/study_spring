@@ -15,6 +15,20 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+V2 구조
+
+모든 컨트롤러에서 뷰로 이동하는 부분에 중복이 있고, 이를 별도로 처리하는 객체를 만듬 -> MyView
+
+FrontController
+ㄴ URL 매핑 정보에서 컨트롤러 조회 및 호출
+ㄴ Controller에서 반환한 MyView의 render() 호출 (JSP forward)
+
+Controller
+ㄴ MyView 반환
+
+ */
+
 @WebServlet(name = "frontControllerServletV2", urlPatterns = "/front-controller/v2/*")
 public class FrontControllerServletV2 extends HttpServlet {
 

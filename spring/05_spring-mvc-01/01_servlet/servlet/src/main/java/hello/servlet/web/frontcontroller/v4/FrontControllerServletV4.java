@@ -16,6 +16,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
+/*
+V4 구조
+
+
+Controller
+ㄴ ModelView를 받환하는 V3Controller와 다르게 viewname만을 반환 -> V4에서는 ModelView를 사용하지 않음
+
+ */
+
 @WebServlet(name = "frontControllerServletV4", urlPatterns = "/front-controller/v4/*")
 public class FrontControllerServletV4 extends HttpServlet {
 
